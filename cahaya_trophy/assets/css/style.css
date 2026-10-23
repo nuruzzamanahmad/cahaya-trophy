@@ -1,0 +1,116 @@
+/* Import font modern 'Inter' agar mirip desain Figma */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+
+body {
+    font-family: 'Inter', sans-serif;
+    background-color: #f8f9fa; /* Warna abu-abu sangat terang untuk latar belakang */
+}
+
+/* =========================================
+   STYLING UNTUK SIDEBAR (NAVIGASI KIRI)
+   ========================================= */
+.sidebar {
+    width: 260px;
+    background-color: #f1f3f5;
+    border-right: 1px solid #e9ecef;
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+    overflow-y: auto;
+    transition: all 0.3s ease;
+}
+
+.sidebar-brand {
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: #0d6efd; /* Biru Cahaya Trophy */
+    padding: 1.5rem;
+}
+
+.sidebar .nav-link {
+    color: #6c757d;
+    padding: 0.8rem 1.5rem;
+    font-weight: 500;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.sidebar .nav-link:hover {
+    background-color: #e9ecef;
+    color: #212529;
+}
+
+.sidebar .nav-link.active {
+    color: #0d6efd;
+    background-color: #e6f0ff;
+    border-right: 4px solid #0d6efd;
+}
+
+/* =========================================
+   STYLING KONTEN UTAMA & TOPBAR
+   ========================================= */
+.main-content {
+    margin-left: 260px; /* Memberi ruang agar tidak tertutup sidebar */
+    min-height: 100vh;
+    transition: all 0.3s ease;
+}
+
+.topbar {
+    background-color: white;
+    border-bottom: 1px solid #e9ecef;
+    padding: 1rem 1.5rem;
+}
+
+.search-bar {
+    background-color: #f1f3f5;
+    border: none;
+    border-radius: 8px;
+    padding-left: 40px;
+}
+
+.search-icon {
+    position: absolute;
+    left: 15px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #adb5bd;
+}
+
+/* =========================================
+   STYLING KARTU STATISTIK (CARDS)
+   ========================================= */
+.stat-card {
+    background: white;
+    border: 1px solid #e9ecef;
+    border-radius: 12px;
+    padding: 1.25rem;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.02); /* Bayangan sangat halus */
+}
+
+.icon-box-sm {
+    width: 40px;
+    height: 40px;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 20px;
+}
+
+/* =========================================
+   RESPONSIVITAS UNTUK LAYAR HP
+   ========================================= */
+@media (max-width: 991.98px) {
+    .sidebar {
+        transform: translateX(-100%); /* Sembunyikan sidebar ke kiri di layar HP */
+    }
+    .sidebar.show {
+        transform: translateX(0); /* Tampilkan jika tombol menu ditekan */
+    }
+    .main-content {
+        margin-left: 0; /* Tarik konten utama ke ujung kiri di layar HP */
+    }
+}
